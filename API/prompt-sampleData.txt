@@ -1,0 +1,9 @@
+Based on the above graph data model, Create the cypher queries for the followings.
+
+99X is a company and Hatteland, Compello, Adra Trintech, Solwr are the projects of it. Company uses Azure, AWS, .NET, Angular as technologies. Samudra, Hashan, Tharindra, Nadun are employees of the company.
+
+Samudra works on the project Hatteland and he has the skill of Azure and .NET. Hashan also works on the project Hatteland and he knows .NET and Angular. Tharindra works on the Compello Project and he knows about both AWS and Azure technologies. Nadun is working on the project Adra Trintech and he knows about Angular and AWS.
+
+Other than that project Hatteland uses .NET, Angular and Azure there technologies. Project Adra Trintech uses Angular as their main technology. Project Solwr uses Azure and .NET as their main technologies. Project Compello uses Angular, AWS and .NET as their main technolgies.
+
+Based on this context, write all the cypher queries that are needed to populate this graph database in neo4j.

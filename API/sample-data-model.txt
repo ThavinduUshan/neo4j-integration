@@ -1,0 +1,6 @@
+(:Company)-[:EMPLOYS]->(:Employee)
+(:Employee)-[:HAS_SKILL]->(:Technology)
+(:Company)-[:USES]->(:Technology)
+(:Project)-[:USES]->(:Technology)
+(:Project)-[:BELONGS_TO]->(:Company)
+(:Employee)-[:WORKS_ON]->(:Project)

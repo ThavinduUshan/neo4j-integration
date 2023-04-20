@@ -1,0 +1,12 @@
+This is the sample graph data  model that we have created for our company. 
+
+(:Company)-[:EMPLOYS]->(:Employee)
+(:Employee)-[:HAS_SKILL]->(:Technology)
+(:Company)-[:USES]->(:Technology)
+(:Project)-[:USES]->(:Technology)
+(:Project)-[:BELONGS_TO]->(:Company)
+(:Employee)-[:WORKS_ON]->(:Project)
+
+Based on this graph database model, I need you to convert the prompt that I provided into a cypher query.
+
+prompt: Who are the employees knows Azure?

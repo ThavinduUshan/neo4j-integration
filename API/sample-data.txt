@@ -1,0 +1,79 @@
+MERGE (:Company {name: '99X'})
+
+MERGE (:Project {name: 'Hatteland'})
+MERGE (:Project {name: 'Compello'})
+MERGE (:Project {name: 'Adra Trintech'})
+MERGE (:Project {name: 'Solwr'})
+
+
+MERGE (:Technology {name: 'Azure'})
+MERGE (:Technology {name: 'AWS'})
+MERGE (:Technology {name: '.NET'})
+MERGE (:Technology {name: 'Angular'})
+
+MERGE (:Employee {name: 'Samudra'})
+MERGE (:Employee {name: 'Hashan'})
+MERGE (:Employee {name: 'Tharindra'})
+MERGE (:Employee {name: 'Nadun'})
+
+MATCH (c:Company {name: '99X'})
+MATCH (h:Project {name: 'Hatteland'})
+MATCH (cp:Project {name: 'Compello'})
+MATCH (a:Project {name: 'Adra Trintech'})
+MATCH (s:Project {name: 'Solwr'})
+MATCH (az:Technology {name: 'Azure'})
+MATCH (aws:Technology {name: 'AWS'})
+MATCH (dotnet:Technology {name: '.NET'})
+MATCH (angular:Technology {name: 'Angular'})
+MATCH (sam:Employee {name: 'Samudra'})
+MATCH (hash:Employee {name: 'Hashan'})
+MATCH (th:Employee {name: 'Tharindra'})
+MATCH (nad:Employee {name: 'Nadun'})
+
+MERGE (c)-[:EMPLOYS]->(sam)
+MERGE (c)-[:EMPLOYS]->(hash)
+MERGE (c)-[:EMPLOYS]->(th)
+MERGE (c)-[:EMPLOYS]->(nad)
+
+MERGE (h)-[:BELONGS_TO]->(c)
+MERGE (cp)-[:BELONGS_TO]->(c)
+MERGE (a)-[:BELONGS_TO]->(c)
+MERGE (s)-[:BELONGS_TO]->(c)
+
+MERGE (h)-[:USES]->(az)
+MERGE (h)-[:USES]->(dotnet)
+MERGE (h)-[:USES]->(angular)
+
+MERGE (cp)-[:USES]->(angular)
+MERGE (cp)-[:USES]->(aws)
+MERGE (cp)-[:USES]->(dotnet)
+
+MERGE (a)-[:USES]->(angular)
+
+MERGE (s)-[:WORKS_ON]->(h)
+MERGE (s)-[:HAS_SKILL]->(az)
+MERGE (s)-[:HAS_SKILL]->(dotnet)
+
+MERGE (hash)-[:WORKS_ON]->(h)
+MERGE (hash)-[:HAS_SKILL]->(dotnet)
+MERGE (hash)-[:HAS_SKILL]->(angular)
+
+MERGE (th)-[:WORKS_ON]->(cp)
+MERGE (th)-[:HAS_SKILL]->(aws)
+MERGE (th)-[:HAS_SKILL]->(az)
+
+MERGE (nad)-[:WORKS_ON]->(a)
+MERGE (nad)-[:HAS_SKILL]->(angular)
+MERGE (nad)-[:HAS_SKILL]->(aws)
+
+MERGE (s)-[:HAS_SKILL]->(az)
+MERGE (s)-[:HAS_SKILL]->(dotnet)
+
+MERGE (h)-[:USES]->(dotnet)
+MERGE (h)-[:USES]->(angular)
+MERGE (h)-[:USES]->(az)
+
+MERGE (a)-[:USES]->(angular)
+
+MERGE (sow)-[:USES]->(az)
+MERGE (sow)-[:USES]->(dotnet)
